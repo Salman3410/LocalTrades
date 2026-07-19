@@ -6,6 +6,7 @@ import Categories from "../screens/Categories/Categories";
 import MyBookings from "../screens/MyBookings/MyBookings";
 import Profile from "../screens/Profile/Profile";
 
+
 import CustomTabBar from "../components/CustomTabBar/CustomTabBar";
 
 const Tab = createBottomTabNavigator();
@@ -15,7 +16,8 @@ const BottomTabs = () => {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-      }}tabBar={(props)=> <CustomTabBar {...props}/>}
+      }}
+      tabBar={(props) => <CustomTabBar {...props} />}
     >
       <Tab.Screen name="Home" component={Home} />
 
@@ -24,6 +26,8 @@ const BottomTabs = () => {
       <Tab.Screen name="Booking" component={MyBookings} />
 
       <Tab.Screen name="Profile" component={Profile} />
+
+     
     </Tab.Navigator>
   );
 };

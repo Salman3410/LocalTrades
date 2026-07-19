@@ -11,6 +11,7 @@ import Reviews from "../screens/Reviews/Reviews";
 import Notifications from "../screens/Notifications/Notifications";
 import Settings from "../screens/Settings/Settings";
 import Help from "../screens/Help/Help";
+import WorkerListingScreen from "../screens/WorkerListing/WorkerListingScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,8 @@ const AppNavigator = () => {
       <Stack.Screen name="Settings" component={Settings} />
 
       <Stack.Screen name="Help" component={Help} />
+
+      <Stack.Screen name="WorkerListing" component={WorkerListingScreen} />
     </Stack.Navigator>
   );
 };

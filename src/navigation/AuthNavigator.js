@@ -22,6 +22,8 @@ const AuthNavigator = () => {
       <Stack.Screen name="OTP" component={OTP} />
 
       <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+
+      
     </Stack.Navigator>
   );
 };
