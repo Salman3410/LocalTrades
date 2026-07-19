@@ -3,70 +3,145 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
   },
 
-  page: {
+  safe: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: 35,
-  },
-
-  emoji: {
-    fontSize: 90,
-    marginBottom: 30,
-  },
-
-  title: {
-    fontSize: 28,
-    fontWeight: "700",
-    color: "#111827",
-    textAlign: "center",
-  },
-
-  description: {
-    marginTop: 20,
-    fontSize: 17,
-    color: "#6B7280",
-    textAlign: "center",
-    lineHeight: 28,
-  },
-
-  bottom: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingHorizontal: 25,
-    paddingBottom: 40,
   },
 
   skip: {
-    color: "#6B7280",
+    position: "absolute",
+
+    right: 25,
+
+    top: 40,
+
+    zIndex: 10,
+  },
+
+  skipText: {
+    color: "#FFFFFF",
+
     fontSize: 16,
+
     fontWeight: "600",
   },
 
-  next: {
-    color: "#2563EB",
-    fontSize: 16,
-    fontWeight: "700",
+  imageBox: {
+    height: "55%",
+
+    justifyContent: "center",
+
+    alignItems: "center",
+
+    paddingTop: 40,
   },
 
-  dots: {
+  image: {
+    width: 330,
+
+    height: 330,
+
+    resizeMode: "contain",
+  },
+
+  card: {
+    flex: 1,
+
+    backgroundColor: "#FFFFFF",
+
+    borderTopLeftRadius: 45,
+
+    borderTopRightRadius: 45,
+
+    paddingHorizontal: 30,
+
+    paddingTop: 40,
+
+    alignItems: "center",
+  },
+
+  title: {
+    fontSize: 30,
+
+    fontWeight: "800",
+
+    color: "#111827",
+
+    textAlign: "center",
+
+    lineHeight: 38,
+  },
+
+  description: {
+    fontSize: 16,
+
+    color: "#6B7280",
+
+    textAlign: "center",
+
+    lineHeight: 24,
+
+    marginTop: 15,
+
+    paddingHorizontal: 10,
+  },
+
+  bottom: {
+    position: "absolute",
+
+    bottom: 35,
+
+    left: 30,
+
+    right: 30,
+
+    alignItems: "center",
+  },
+
+  pagination: {
     flexDirection: "row",
+
+    marginBottom: 25,
   },
 
   dot: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
+    width: 8,
+
+    height: 8,
+
+    borderRadius: 10,
+
     backgroundColor: "#D1D5DB",
-    marginHorizontal: 4,
+
+    marginHorizontal: 5,
   },
 
   activeDot: {
+    width: 28,
+
     backgroundColor: "#2563EB",
-    width: 24,
+  },
+
+  button: {
+    height: 58,
+
+    width: "100%",
+
+    backgroundColor: "#2563EB",
+
+    borderRadius: 18,
+
+    alignItems: "center",
+
+    justifyContent: "center",
+  },
+
+  buttonText: {
+    color: "#FFFFFF",
+
+    fontSize: 17,
+
+    fontWeight: "700",
   },
 });

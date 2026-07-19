@@ -1,83 +1,93 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
+
 import { View, Text, Image, TouchableOpacity, Dimensions } from "react-native";
 
-import PagerView from "react-native-pager-view";
+import { SafeAreaView } from "react-native-safe-area-context";
+
+import { LinearGradient } from "expo-linear-gradient";
 
 import styles from "./styles";
 
 const { width } = Dimensions.get("window");
 
-const data = [
+const slides = [
   {
-    title: "Find Skilled Professionals",
+    id: "1",
+
+    title: "Find trusted experts near you",
+
     description:
-      "Connect with trusted electricians, plumbers, painters, cleaners and more.",
-    emoji: "👷",
+      "From repairs to home services, connect with verified professionals in your area.",
+
+    // image: require("./assets/onboarding1.png"),
   },
+
   {
-    title: "Book Easily",
+    id: "2",
+
+    title: "Book services with confidence",
+
     description:
-      "Choose date, compare ratings and hire the best worker nearby.",
-    emoji: "📅",
-  },
-  {
-    title: "Safe & Trusted",
-    description: "Verified workers, secure bookings and transparent reviews.",
-    emoji: "⭐",
+      "Compare ratings, reviews and prices. Hire the right professional in minutes.",
+
+    // image: require("./assets/onboarding2.png"),
   },
 ];
 
 const Onboarding = ({ navigation }) => {
-  const pagerRef = useRef(null);
+  const [current, setCurrent] = useState(0);
 
-  const [page, setPage] = useState(0);
-
-  const nextPage = () => {
-    if (page < 2) {
-      pagerRef.current.setPage(page + 1);
-    } else {
+  const next = () => {
+    if (current === 1) {
       navigation.replace("Auth");
+    } else {
+      setCurrent(1);
     }
   };
 
   return (
-    <View style={styles.container}>
-      <PagerView
-        style={{ flex: 1 }}
-        initialPage={0}
-        ref={pagerRef}
-        onPageSelected={(e) => setPage(e.nativeEvent.position)}
-      >
-        {data.map((item, index) => (
-          <View key={index} style={styles.page}>
-            <Text style={styles.emoji}>{item.emoji}</Text>
-
-            <Text style={styles.title}>{item.title}</Text>
-
-            <Text style={styles.description}>{item.description}</Text>
-          </View>
-        ))}
-      </PagerView>
-
-      <View style={styles.bottom}>
-        <TouchableOpacity onPress={() => navigation.replace("Auth")}>
-          <Text style={styles.skip}>Skip</Text>
+    <LinearGradient colors={["#2563EB", "#60A5FA"]} style={styles.container}>
+      <SafeAreaView style={styles.safe}>
+        <TouchableOpacity
+          style={styles.skip}
+          onPress={() => navigation.replace("Auth")}
+        >
+          <Text style={styles.skipText}>Skip</Text>
         </TouchableOpacity>
 
-        <View style={styles.dots}>
-          {data.map((_, index) => (
-            <View
-              key={index}
-              style={[styles.dot, page === index && styles.activeDot]}
-            />
-          ))}
+        {/* IMAGE */}
+
+        <View style={styles.imageBox}>
+          <Image source={slides[current].image} style={styles.image} />
         </View>
 
-        <TouchableOpacity onPress={nextPage}>
-          <Text style={styles.next}>{page === 2 ? "Get Started" : "Next"}</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+        {/* WHITE CARD */}
+
+        <View style={styles.card}>
+          <Text style={styles.title}>{slides[current].title}</Text>
+
+          <Text style={styles.description}>{slides[current].description}</Text>
+
+          <View style={styles.bottom}>
+            <View style={styles.pagination}>
+              <View style={[styles.dot, current === 0 && styles.activeDot]} />
+
+              <View style={[styles.dot, current === 1 && styles.activeDot]} />
+            </View>
+
+            <TouchableOpacity
+              style={styles.button}
+              activeOpacity={0.85}
+              onPress={next}
+            >
+              <Text style={styles.buttonText}>
+                {current === 0 ? "Next" : "Get Started"}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </SafeAreaView>
+    </LinearGradient>
   );
 };
 
