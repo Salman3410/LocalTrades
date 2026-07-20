@@ -1,6 +1,7 @@
 import React from "react";
 import { ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
 
 import styles from "./styles";
 
@@ -14,7 +15,9 @@ import TopWorkers from "./components/TopWorkers";
 import EmergencyCard from "./components/EmergencyCard";
 
 const Home = () => {
+  const navigation = useNavigation();
   return (
+    
     <SafeAreaView style={styles.container}>
       <ScrollView
         showsVerticalScrollIndicator={false}
@@ -22,7 +25,7 @@ const Home = () => {
       >
         <Header />
 
-        <SearchBar />
+        <SearchBar onPress={()=> navigation.navigate("Search")}/>
 
         <OfferBanner />
 
