@@ -1,27 +1,35 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-import Splash from "../screens/Splash/Splash";
 import Onboarding from "../screens/Onboarding/Onboarding";
-
 import AuthNavigator from "./AuthNavigator";
 import AppNavigator from "./AppNavigator";
+import useAuth from "../hooks/useAuth";
+import Splash from "../screens/Splash/Splash"
 
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
+  const { isAuthenticated, loading } = useAuth();
+
+  if (loading) {
+    return <Splash />;
+  }
+
   return (
     <Stack.Navigator
-      initialRouteName="Splash"
-      screenOptions={{ headerShown: false }}
+      screenOptions={{
+        headerShown: false,
+      }}
     >
-      <Stack.Screen name="Splash" component={Splash} />
+      {isAuthenticated ? (
+        <Stack.Screen name="App" component={AppNavigator} />
+      ) : (
+        <>
+          <Stack.Screen name="Onboarding" component={Onboarding} />
 
-      <Stack.Screen name="Onboarding" component={Onboarding} />
-
-      <Stack.Screen name="Auth" component={AuthNavigator} />
-
-      <Stack.Screen name="App" component={AppNavigator} />
+          <Stack.Screen name="Auth" component={AuthNavigator} />
+        </>
+      )}
     </Stack.Navigator>
   );
 };

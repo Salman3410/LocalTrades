@@ -1,13 +1,10 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
 import Home from "../screens/Home/Home";
 import Categories from "../screens/Categories/Categories";
 import MyBookingsScreen from "../screens/MyBookings/MyBookingsScreen";
-import Profile from "../screens/Profile/Profile";
-
-
 import CustomTabBar from "../components/CustomTabBar/CustomTabBar";
+import ProfileScreen from "../screens/Profile/ProfileScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -25,9 +22,7 @@ const BottomTabs = () => {
 
       <Tab.Screen name="Booking" component={MyBookingsScreen} />
 
-      <Tab.Screen name="Profile" component={Profile} />
-
-     
+      <Tab.Screen name="ProfileScreen" component={ProfileScreen} />
     </Tab.Navigator>
   );
 };

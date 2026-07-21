@@ -9,6 +9,7 @@ import {
   Platform,
   ScrollView,
 } from "react-native";
+import useAuth from "../../../hooks/useAuth";
 
 import { Ionicons } from "@expo/vector-icons";
 
@@ -18,6 +19,17 @@ const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [secure, setSecure] = useState(true);
+
+  const {login} = useAuth();
+
+  const handleLogin = async () => {
+    if (!email || !password) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    await login(email, password);
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -117,7 +129,7 @@ const Login = ({ navigation }) => {
 
           <TouchableOpacity
             style={styles.loginButton}
-            onPress={() => navigation.replace("App")}
+            onPress={handleLogin}
           >
             <Text style={styles.loginText}>
               Login

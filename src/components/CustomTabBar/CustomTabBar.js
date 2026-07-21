@@ -1,8 +1,8 @@
 import React from "react";
 import { View, TouchableOpacity, Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-
 import styles from "./styles";
+import ProfileScreen from "../../screens/Profile/ProfileScreen";
 
 const icons = {
   Home: {
@@ -21,7 +21,7 @@ const icons = {
     active: "calendar",
     inactive: "calendar-outline",
   },
-  Profile: {
+  ProfileScreen: {
     active: "person",
     inactive: "person-outline",
   },
