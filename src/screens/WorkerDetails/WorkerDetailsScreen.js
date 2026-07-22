@@ -1,13 +1,14 @@
 import React from "react";
-
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
-
 import { Ionicons } from "@expo/vector-icons";
-
 import styles from "./styles/workerDetailsStyles";
+import useFavorites from "../../hooks/useFavorites";
 
 export default function WorkerDetailsScreen({ route, navigation }) {
   const { worker } = route.params;
+  const { toggleFavorite, isFavorite } = useFavorites();
+
+  const favorite = isFavorite(worker.id);
 
   return (
     <View style={styles.container}>
@@ -22,6 +23,17 @@ export default function WorkerDetailsScreen({ route, navigation }) {
         </TouchableOpacity>
 
         <Text style={styles.headerTitle}>Profile</Text>
+
+        <TouchableOpacity
+          style={styles.backButton}
+          onPress={() => toggleFavorite(worker)}
+        >
+          <Ionicons
+            name={favorite ? "heart" : "heart-outline"}
+            size={22}
+            color={favorite ? "#EF4444" : "#111827"}
+          />
+        </TouchableOpacity>
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>

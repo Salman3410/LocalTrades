@@ -6,10 +6,9 @@ const messagesData = [
       id: "101",
       name: "Ali Electric Services",
       profession: "Electrician",
-      avatar: null,
     },
 
-    lastMessage: "I can visit tomorrow at 4 PM",
+    lastMessage: "I'll reach your location around 4 PM.",
 
     time: "2:30 PM",
 
@@ -19,21 +18,19 @@ const messagesData = [
       {
         id: "1",
         sender: "worker",
-        text: "Hello, how can I help you?",
+        text: "Hello 👋",
         time: "2:10 PM",
       },
-
       {
         id: "2",
         sender: "user",
-        text: "I need fan repair service",
-        time: "2:15 PM",
+        text: "Can you repair my ceiling fan?",
+        time: "2:14 PM",
       },
-
       {
         id: "3",
         sender: "worker",
-        text: "I can visit tomorrow at 4 PM",
+        text: "I'll reach your location around 4 PM.",
         time: "2:30 PM",
       },
     ],
@@ -46,10 +43,9 @@ const messagesData = [
       id: "102",
       name: "Ahmed Plumbing",
       profession: "Plumber",
-      avatar: null,
     },
 
-    lastMessage: "Your booking has been confirmed",
+    lastMessage: "Booking confirmed successfully.",
 
     time: "Yesterday",
 
@@ -59,8 +55,33 @@ const messagesData = [
       {
         id: "1",
         sender: "worker",
-        text: "Your booking has been confirmed",
-        time: "10:20 AM",
+        text: "Booking confirmed successfully.",
+        time: "11:45 AM",
+      },
+    ],
+  },
+
+  {
+    id: "3",
+
+    worker: {
+      id: "103",
+      name: "Bilal AC Repair",
+      profession: "AC Technician",
+    },
+
+    lastMessage: "Thank you for choosing us.",
+
+    time: "Monday",
+
+    unread: 0,
+
+    messages: [
+      {
+        id: "1",
+        sender: "worker",
+        text: "Thank you for choosing us.",
+        time: "9:15 AM",
       },
     ],
   },

@@ -4,9 +4,13 @@ import { View, Text, TouchableOpacity } from "react-native";
 
 import { Ionicons } from "@expo/vector-icons";
 
+import useFavorites from "../../../../hooks/useFavorites";
+
 import styles from "../styles/favoritesStyles";
 
-export default function FavoriteCard({ worker, navigation, onRemove }) {
+export default function FavoriteCard({ worker, navigation }) {
+  const { removeFavorite } = useFavorites();
+
   return (
     <TouchableOpacity
       style={styles.card}
@@ -38,7 +42,7 @@ export default function FavoriteCard({ worker, navigation, onRemove }) {
       </View>
 
       <View style={styles.right}>
-        <TouchableOpacity onPress={onRemove}>
+        <TouchableOpacity onPress={() => removeFavorite(worker.id)}>
           <Ionicons name="heart" size={24} color="#EF4444" />
         </TouchableOpacity>
 

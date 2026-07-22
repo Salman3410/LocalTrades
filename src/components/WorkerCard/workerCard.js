@@ -1,11 +1,13 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-
 import { Ionicons } from "@expo/vector-icons";
-
+import useFavorites from "../../hooks/useFavorites";
 import styles from "./workerCardStyles";
 
 const WorkerCard = ({ worker, onPress, compact = false }) => {
+  const { toggleFavorite, isFavorite } = useFavorites();
+  const favorite = isFavorite(worker.id);
+
   return (
     <TouchableOpacity
       style={[styles.card, compact && styles.compactCard]}
@@ -44,6 +46,14 @@ const WorkerCard = ({ worker, onPress, compact = false }) => {
       {/* Right */}
 
       <View style={styles.right}>
+        <TouchableOpacity onPress={() => toggleFavorite(worker)}>
+          <Ionicons
+            name={favorite ? "heart" : "heart-outline"}
+            size={24}
+            color={favorite ? "#EF4444" : "#9CA3AF"}
+          />
+        </TouchableOpacity>
+
         <View
           style={[
             styles.badge,

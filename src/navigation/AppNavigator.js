@@ -23,6 +23,7 @@ import AddAddressScreen from "../screens/Profile/SavedAddresses/AddAddressScreen
 import EditAddressScreen from "../screens/Profile/SavedAddresses/EditAddressScreen";
 import MessagesScreen from "../screens/Profile/Messages/MessagesScreen";
 import ChatScreen from "../screens/Profile/Messages/ChatScreen";
+import NotificationCenterScreen from "../screens/Home/NotificationCenter/NotificationCenterScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -62,6 +63,10 @@ const AppNavigator = () => {
       <Stack.Screen name="EditAddress" component={EditAddressScreen} />
       <Stack.Screen name="Messages" component={MessagesScreen} />
       <Stack.Screen name="ChatScreen" component={ChatScreen} />
+      <Stack.Screen
+        name="NotificationCenter"
+        component={NotificationCenterScreen}
+      />
     </Stack.Navigator>
   );
 };

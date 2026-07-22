@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { View, FlatList, Text, TouchableOpacity } from "react-native";
 
@@ -7,16 +7,12 @@ import { Ionicons } from "@expo/vector-icons";
 import FavoriteCard from "./components/FavoriteCard";
 import EmptyFavorites from "./components/EmptyFavorites";
 
-import favoritesData from "../../../data/favoritesData";
+import useFavorites from "../../../hooks/useFavorites";
 
 import styles from "./styles/favoritesStyles";
 
 export default function FavoritesScreen({ navigation }) {
-  const [favorites, setFavorites] = useState(favoritesData);
-
-  const removeFavorite = (id) => {
-    setFavorites((prev) => prev.filter((item) => item.id !== id));
-  };
+  const { favorites } = useFavorites();
 
   return (
     <View style={styles.container}>
@@ -27,7 +23,7 @@ export default function FavoritesScreen({ navigation }) {
           style={styles.backButton}
           onPress={() => navigation.goBack()}
         >
-          <Ionicons name="arrow-back" size={24} color="#111" />
+          <Ionicons name="arrow-back" size={24} color="#111827" />
         </TouchableOpacity>
 
         <Text style={styles.headerTitle}>Favorites</Text>
@@ -35,17 +31,14 @@ export default function FavoritesScreen({ navigation }) {
 
       <FlatList
         data={favorites}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.id.toString()}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
           padding: 20,
+          flexGrow: 1,
         }}
         renderItem={({ item }) => (
-          <FavoriteCard
-            worker={item}
-            navigation={navigation}
-            onRemove={() => removeFavorite(item.id)}
-          />
+          <FavoriteCard worker={item} navigation={navigation} />
         )}
         ListEmptyComponent={<EmptyFavorites />}
       />

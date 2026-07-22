@@ -16,10 +16,9 @@ import workers from "../../data/workersData";
 
 import RecentSearchItem from "./components/RecentSearchItem";
 import ServiceChip from "./components/ServiceChip";
-
+import WorkerCard from "../../components/WorkerCard/workerCard";
 
 import styles from "./styles/searchStyles";
-import WorkerCard from "../../components/WorkerCard/workerCard";
 
 export default function SearchScreen({ navigation }) {
   const [query, setQuery] = useState("");
@@ -46,6 +45,7 @@ export default function SearchScreen({ navigation }) {
   return (
     <View style={styles.container}>
       {/* Header */}
+
       <View style={styles.header}>
         <TouchableOpacity
           style={styles.backButton}
@@ -57,7 +57,8 @@ export default function SearchScreen({ navigation }) {
         <Text style={styles.headerTitle}>Search</Text>
       </View>
 
-      {/* Search Input */}
+      {/* Search */}
+
       <View style={styles.searchContainer}>
         <Ionicons name="search" size={20} color="#777" />
 
@@ -71,24 +72,34 @@ export default function SearchScreen({ navigation }) {
         />
       </View>
 
-      {/* When user is typing */}
+      {/* Search Results */}
+
       {query.length > 0 ? (
         <FlatList
           data={filteredWorkers}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.id.toString()}
           showsVerticalScrollIndicator={false}
+          contentContainerStyle={{
+            paddingBottom: 30,
+          }}
           renderItem={({ item }) => (
             <WorkerCard
               worker={item}
               onPress={() =>
-                navigation.navigate("WorkerDetailsScreen", {
+                navigation.navigate("WorkerDetails", {
                   worker: item,
                 })
               }
             />
           )}
           ListEmptyComponent={
-            <Text style={{ textAlign: "center", color: "#777", marginTop: 40 }}>
+            <Text
+              style={{
+                textAlign: "center",
+                color: "#777",
+                marginTop: 40,
+              }}
+            >
               No results found
             </Text>
           }
@@ -96,6 +107,7 @@ export default function SearchScreen({ navigation }) {
       ) : (
         <>
           {/* Recent Searches */}
+
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Recent Searches</Text>
 
@@ -109,6 +121,7 @@ export default function SearchScreen({ navigation }) {
           </View>
 
           {/* Popular Services */}
+
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Popular Services</Text>
 

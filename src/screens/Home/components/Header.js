@@ -19,7 +19,10 @@ const Header = () => {
           <Ionicons name="chevron-down" size={16} color="#6B7280" />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.notificationButton}>
+        <TouchableOpacity
+          style={styles.notificationButton}
+          onPress={() => navigation.navigate("NotificationCenter")}
+        >
           <Ionicons name="notifications-outline" size={22} color="#111827" />
 
           <View style={styles.notificationDot} />
