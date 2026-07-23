@@ -9,5 +9,5 @@ export default function useFavorites() {
     throw new Error("useFavorites must be used inside FavoritesProvider");
   }
 
-  return context;
+  return context; 
 }

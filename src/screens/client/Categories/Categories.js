@@ -52,9 +52,9 @@ export default function Categories() {
               navigation.navigate("WorkerListing", {
                 category: title,
               })
-            }
+            }/>
           )}
-      />
+            />
 
       <CategoryGrid
         categories={categories}

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AddressContext } from "../context/AddressContext";
 
-export default function useAddress() {
+export default function useAddress() { 
   const context = useContext(AddressContext);
 
   if (!context) {
@@ -10,3 +10,4 @@ export default function useAddress() {
 
   return context;
 }
+ 

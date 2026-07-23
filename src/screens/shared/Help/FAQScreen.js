@@ -1,10 +1,7 @@
 import React from "react";
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
-
 import { Ionicons } from "@expo/vector-icons";
-
 import FAQItem from "./components/FAQItem";
-
 import styles from "./styles/helpStyles";
 
 const faq = [

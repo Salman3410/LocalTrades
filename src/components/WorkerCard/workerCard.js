@@ -4,13 +4,13 @@ import { Ionicons } from "@expo/vector-icons";
 
 import useFavorites from "../../hooks/useFavorites";
 import styles from "./workerCardStyles";
-
+ 
 const WorkerCard = ({ worker, onPress, compact = false }) => {
   const { toggleFavorite, isFavorite } = useFavorites();
-
+ 
   const favorite = isFavorite(worker.id);
 
-  return ( 
+  return (  
     <TouchableOpacity
       style={[styles.card, compact && styles.compactCard]}
       activeOpacity={0.9}

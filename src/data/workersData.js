@@ -9,7 +9,7 @@ const workers = [
     price: "1500",
     image: null,
   },
-
+  
   {
     id: "2",
     name: "Ali Raza",

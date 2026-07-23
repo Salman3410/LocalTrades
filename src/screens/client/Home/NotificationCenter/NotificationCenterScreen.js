@@ -6,18 +6,18 @@ import {
   FlatList,
   TouchableOpacity,
   RefreshControl,
-} from "react-native";
+} from "react-native"; 
 
 import { Ionicons } from "@expo/vector-icons";
 
 import { useNavigation } from "@react-navigation/native";
 
-import useNotifications from "../../../hooks/useNotifications";
 
 import NotificationCard from "./components/NotificationCard";
 import EmptyNotifications from "./components/EmptyNotifications";
 
 import styles from "./styles/notificationCenterStyles";
+import useNotifications from "../../../../hooks/useNotifications";
 
 export default function NotificationCenterScreen() {
   const navigation = useNavigation();

@@ -3,9 +3,9 @@ import { TouchableOpacity, Text, View, Alert } from "react-native";
 
 import { Ionicons } from "@expo/vector-icons";
 
-import useAuth from "../../../hooks/useAuth";
 
 import styles from "../styles/profileStyles";
+import useAuth from "../../../../hooks/useAuth";
 
 export default function LogoutButton() {
   const { logout } = useAuth();

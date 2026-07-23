@@ -2,10 +2,8 @@ import React from "react";
 import { ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
-
 import styles from "./styles";
-
-import Header from "./components/Header";
+import Header from "./components/Header"; 
 import SearchBar from "./components/SearchBar";
 import OfferBanner from "./components/OfferBanner";
 import SectionHeader from "./components/SectionHeader";
@@ -26,7 +24,7 @@ const Home = () => {
         <Header />
 
         <SearchBar onPress={()=> navigation.navigate("Search")}/>
-
+ 
         <OfferBanner />
 
         <SectionHeader

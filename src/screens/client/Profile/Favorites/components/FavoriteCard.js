@@ -3,10 +3,8 @@ import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 
 import { Ionicons } from "@expo/vector-icons";
-
-import useFavorites from "../../../../hooks/useFavorites";
-
 import styles from "../styles/favoritesStyles";
+import useFavorites from "../../../../../hooks/useFavorites";
 
 export default function FavoriteCard({ worker, navigation }) {
   const { removeFavorite } = useFavorites();

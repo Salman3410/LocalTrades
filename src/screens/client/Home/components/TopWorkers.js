@@ -3,9 +3,8 @@ import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import SectionHeader from "./SectionHeader";
-import WorkerCard from "../../../components/WorkerCard/workerCard";
-
-import workers from "../../../data/workersData";
+import WorkerCard from "../../../../components/WorkerCard/workerCard";
+import workers from "../../../../data/workersData";
 
 const TopWorkers = () => {
   const navigation = useNavigation();

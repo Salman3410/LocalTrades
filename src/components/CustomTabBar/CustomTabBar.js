@@ -2,7 +2,7 @@ import React from "react";
 import { View, TouchableOpacity, Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import styles from "./styles";
-import ProfileScreen from "../../screens/Profile/ProfileScreen";
+import ProfileScreen from "../../screens/client/Profile/ProfileScreen";
 
 const icons = {
   Home: {

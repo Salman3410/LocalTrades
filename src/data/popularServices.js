@@ -4,7 +4,7 @@ const popularServices = [
   "AC Repair",
   "Painter",
   "Cleaner",
-  "Carpenter",
+  "Carpenter", 
 ];
 
 export default popularServices;

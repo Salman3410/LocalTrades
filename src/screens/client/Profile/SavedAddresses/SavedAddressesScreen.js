@@ -5,12 +5,10 @@ import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 import AddressCard from "./components/AddressCard";
-
 import EmptyAddress from "./components/EmptyAddress";
 
-import useAddress from "../../../hooks/useAddress";
-
 import styles from "./styles/addressStyles";
+import useAddress from "../../../../hooks/useAddress";
 
 export default function SavedAddressesScreen({ navigation }) {
   const {

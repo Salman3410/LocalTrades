@@ -10,9 +10,9 @@ import {
 
 import { Ionicons } from "@expo/vector-icons";
 
-import useAddress from "../../../hooks/useAddress";
 
 import styles from "./styles/addressStyles";
+import useAddress from "../../../../hooks/useAddress";
 
 export default function AddAddressScreen({ navigation }) {
   const { addAddress } = useAddress();
@@ -125,3 +125,4 @@ export default function AddAddressScreen({ navigation }) {
     </View>
   );
 }
+ 

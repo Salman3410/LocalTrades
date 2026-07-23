@@ -5,6 +5,7 @@ import AppProviders from "./src/context/AppProviders";
 import { AddressProvider } from "./src/context/AddressContext";
 import { FavoritesProvider } from "./src/context/FavoritesContext";
 import { NotificationProvider } from "./src/context/NotificationContext";
+import { BookingProvider } from "./src/context/BookingContext";
 
 const App = () => {
   return (
@@ -12,14 +13,14 @@ const App = () => {
       <FavoritesProvider>
         <AddressProvider>
           <NotificationProvider>
-          {/* <BookingProvider> */}
+          <BookingProvider>
             <NotificationProvider>
               <NavigationContainer>
                 <RootNavigator />
               </NavigationContainer>
           </NotificationProvider>
+          </BookingProvider>
             </NotificationProvider>
-          {/* </BookingProvider> */}
         </AddressProvider>
       </FavoritesProvider>
     </AppProviders>

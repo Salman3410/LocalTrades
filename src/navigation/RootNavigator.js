@@ -1,10 +1,10 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Onboarding from "../screens/Onboarding/Onboarding";
+import Onboarding from "../screens/Auth/Onboarding/Onboarding";
 import AuthNavigator from "./AuthNavigator";
 import AppNavigator from "./AppNavigator";
 import useAuth from "../hooks/useAuth";
-import Splash from "../screens/Splash/Splash"
+import Splash from "../screens/Auth/Splash/Splash"
 
 const Stack = createNativeStackNavigator();
 

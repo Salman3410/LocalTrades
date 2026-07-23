@@ -1,15 +1,10 @@
 import React from "react";
-
 import { View, FlatList, Text, TouchableOpacity } from "react-native";
-
 import { Ionicons } from "@expo/vector-icons";
-
 import FavoriteCard from "./components/FavoriteCard";
 import EmptyFavorites from "./components/EmptyFavorites";
-
-import useFavorites from "../../../hooks/useFavorites";
-
 import styles from "./styles/favoritesStyles";
+import useFavorites from "../../../../hooks/useFavorites";
 
 export default function FavoritesScreen({ navigation }) {
   const { favorites } = useFavorites();

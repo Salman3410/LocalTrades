@@ -7,18 +7,14 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
-
 import { Ionicons } from "@expo/vector-icons";
-
-import recentSearches from "../../data/recentSearches";
-import popularServices from "../../data/popularServices";
-import workers from "../../data/workersData";
-
 import RecentSearchItem from "./components/RecentSearchItem";
 import ServiceChip from "./components/ServiceChip";
-import WorkerCard from "../../components/WorkerCard/workerCard";
-
 import styles from "./styles/searchStyles";
+import recentSearches from "../../../data/recentSearches";
+import popularServices from "../../../data/popularServices";
+import workers from "../../../data/workersData";
+import WorkerCard from "../../../components/WorkerCard/workerCard";
 
 export default function SearchScreen({ navigation }) {
   const [query, setQuery] = useState("");

@@ -1,16 +1,13 @@
 import React from "react";
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
-
 import { Ionicons } from "@expo/vector-icons";
-
-import useAuth from "../../hooks/useAuth";
-
 import ProfileHeader from "./components/ProfileHeader";
 import MenuItem from "./components/MenuItem";
 import LogoutButton from "./components/LogoutButton";
 import { useNavigation } from "@react-navigation/native";
 import styles from "./styles/profileStyles";
-
+import useAuth from "../../../hooks/useAuth";
+ 
 
 export default function ProfileScreen() {
   const { user } = useAuth();

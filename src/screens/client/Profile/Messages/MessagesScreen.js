@@ -12,9 +12,9 @@ import { Ionicons } from "@expo/vector-icons";
 
 import ConversationCard from "./components/ConversationCard";
 
-import messagesData from "../../../data/messagesData";
 
 import styles from "./styles/messageStyles";
+import messagesData from "../../../../data/messagesData";
 
 export default function MessagesScreen({ navigation }) {
   const [search, setSearch] = useState("");
@@ -92,3 +92,4 @@ export default function MessagesScreen({ navigation }) {
     </View>
   );
 }
+ 

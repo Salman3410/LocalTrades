@@ -4,9 +4,8 @@ import { View, Text, TextInput, TouchableOpacity } from "react-native";
 
 import { Ionicons } from "@expo/vector-icons";
 
-import useAddress from "../../../hooks/useAddress";
-
 import styles from "./styles/addressStyles";
+import useAddress from "../../../../hooks/useAddress";
 
 export default function EditAddressScreen({ route, navigation }) {
   const { address } = route.params;
@@ -69,3 +68,4 @@ export default function EditAddressScreen({ route, navigation }) {
     </View>
   );
 }
+ 
