@@ -1,11 +1,11 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-
 import { Ionicons } from "@expo/vector-icons";
-
 import styles from "../styles/headerStyles";
+import { useNavigation } from "@react-navigation/native";
 
 const Header = () => {
+  const navigation = useNavigation()
   return (
     <View style={styles.container}>
       {/* Top Row */}

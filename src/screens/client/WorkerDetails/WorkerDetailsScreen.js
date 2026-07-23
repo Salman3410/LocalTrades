@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import styles from "./styles/workerDetailsStyles";
-import useFavorites from "../../hooks/useFavorites";
+import useFavorites from "../../../hooks/useFavorites";
 
 export default function WorkerDetailsScreen({ route, navigation }) {
   const { worker } = route.params;

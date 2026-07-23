@@ -1,11 +1,11 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-
 import { Ionicons } from "@expo/vector-icons";
-
 import styles from "../styles/bannerStyles";
+import { useNavigation } from "@react-navigation/native";
 
 const OfferBanner = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       {/* Left Side */}
@@ -21,7 +21,11 @@ const OfferBanner = () => {
           Book trusted professionals near you in just a few taps.
         </Text>
 
-        <TouchableOpacity activeOpacity={0.85} style={styles.button}>
+        <TouchableOpacity
+          activeOpacity={0.85}
+          style={styles.button}
+          onPress={() => navigation.navigate("Categories")}
+        >
           <Text style={styles.buttonText}>Book Now</Text>
 
           <Ionicons name="arrow-forward" size={18} color="#FFFFFF" />

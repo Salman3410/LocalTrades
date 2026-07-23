@@ -4,17 +4,20 @@ import RootNavigator from "./src/navigation/RootNavigator";
 import AppProviders from "./src/context/AppProviders";
 import { AddressProvider } from "./src/context/AddressContext";
 import { FavoritesProvider } from "./src/context/FavoritesContext";
+import { NotificationProvider } from "./src/context/NotificationContext";
 
 const App = () => {
   return (
     <AppProviders>
       <FavoritesProvider>
         <AddressProvider>
+          <NotificationProvider>
           {/* <BookingProvider> */}
             <NotificationProvider>
               <NavigationContainer>
                 <RootNavigator />
               </NavigationContainer>
+          </NotificationProvider>
             </NotificationProvider>
           {/* </BookingProvider> */}
         </AddressProvider>

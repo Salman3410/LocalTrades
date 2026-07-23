@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import workers from "../../data/workersData";
+import workers from "../../../data/workersData";
 import styles from "./styles/workerListingStyles";
-import WorkerCard from "../../components/WorkerCard/workerCard";
+import WorkerCard from "../../../components/WorkerCard/workerCard";
 
 export default function WorkerListingScreen({ route, navigation }) {
   const { category } = route.params || {};

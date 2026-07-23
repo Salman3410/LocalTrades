@@ -15,7 +15,7 @@ export default StyleSheet.create({
   // ==========================
 
   header: {
-    height: 65,
+    height: 120,
     backgroundColor: "#FFFFFF",
     flexDirection: "row",
     alignItems: "center",
@@ -181,7 +181,7 @@ export default StyleSheet.create({
   // ==========================
 
   chatHeader: {
-    height: 65,
+    height: 120,
     backgroundColor: "#FFFFFF",
     flexDirection: "row",
     alignItems: "center",

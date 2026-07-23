@@ -23,9 +23,9 @@ const SearchBar = ({ onPress }) => {
         />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.filterButton} activeOpacity={0.8}>
+      {/* <TouchableOpacity style={styles.filterButton} activeOpacity={0.8}>
         <Ionicons name="options-outline" size={24} color="#FFFFFF" />
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   );
 };
